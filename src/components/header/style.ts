@@ -14,14 +14,23 @@ export const StyleImg = styled.img`
   margin-top: 1.25rem;
 `
 export const StyleDiv = styled.div`
-  display: flex;
+  /* display: flex;
   align-items: center;
   flex-direction: column;
   gap: 1.25rem;
-  margin-bottom: 4.375rem;
+  margin-bottom: 4.375rem; */
 
   span {
     color: ${(props) => props.theme['base-blue']};
     font-size: 1.5rem;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 4.375rem;
+    text-decoration: none;
+    box-shadow: none;
   }
 `

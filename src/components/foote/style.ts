@@ -14,6 +14,15 @@ export const StyleFooter = styled.footer`
   div p span {
     color: ${(props) => props.theme['base-span']};
   }
+  div {
+    p {
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+      svg {
+      }
+    }
+  }
 `
 export const StyleAncora = styled.a`
   text-decoration: none;

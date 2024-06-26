@@ -24,13 +24,13 @@ export function Profile() {
             volutpat pulvinar vel mass.
           </p>
           <span>
-            <a href="">
+            <a href="" target="_brack">
               <GithubLogo size={24} /> Cameronwll
             </a>
-            <a href="">
+            <a href="" target="_brack">
               <Building size={24} /> Rocktseat
             </a>
-            <a href="">
+            <a href="" target="_brack">
               <Users size={24} /> 32 seguidores
             </a>
           </span>

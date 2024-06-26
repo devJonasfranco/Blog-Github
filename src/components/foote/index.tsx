@@ -1,3 +1,4 @@
+import { At, GithubLogo, LinkedinLogo } from '@phosphor-icons/react'
 import { StyleLayout, StyleFooter, StyleAncora } from './style'
 
 export function Footer() {
@@ -7,17 +8,23 @@ export function Footer() {
         <div>
           <h4>Contato:</h4>
           <p>
-            Email: <span>minhacontajonas@gmail.com</span>
+            <At size={20} />: <span>minhacontajonas@gmail.com</span>
           </p>
           <p>
-            Linkedin:{' '}
-            <StyleAncora href="https://www.linkedin.com/in/dev-jonasfranco/">
+            <LinkedinLogo size={20} />:{' '}
+            <StyleAncora
+              href="https://www.linkedin.com/in/dev-jonasfranco/"
+              target="_brack"
+            >
               dev-jonasfranco
             </StyleAncora>
           </p>
           <p>
-            GitHub:{' '}
-            <StyleAncora href="https://github.com/devJonasfranco">
+            <GithubLogo size={20} />:{' '}
+            <StyleAncora
+              href="https://github.com/devJonasfranco"
+              target="_brack"
+            >
               devJonasfranco
             </StyleAncora>
           </p>
