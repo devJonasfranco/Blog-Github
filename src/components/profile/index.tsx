@@ -14,7 +14,7 @@ export function Profile() {
         <StyleInforProfile>
           <strong>
             Cameron Willianmson{' '}
-            <a href="">
+            <a href="https://github.com/devJonasfranco" target="_brack">
               GITHUB <ArrowSquareOut size={17} />
             </a>
           </strong>

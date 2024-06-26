@@ -17,6 +17,9 @@ export const StyleConteinerUl = styled.ul`
 
   li {
     list-style: none;
+    a {
+      text-decoration: none;
+    }
   }
 `
 
