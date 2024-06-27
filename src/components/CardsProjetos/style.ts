@@ -59,6 +59,12 @@ export const StyleSection = styled.section`
     p {
       font-size: 0.875rem;
       color: ${(props) => props.theme['base-span']};
+      /* border: 1px solid; */
+      width: 12.5rem;
+      margin-top: -1.25rem;
+      margin-right: -20px;
+      display: flex;
+      justify-content: end;
     }
   }
   p {

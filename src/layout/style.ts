@@ -11,6 +11,7 @@ export const ContainerMain = styled.div`
   flex-direction: column;
 
   width: 90rem;
-  /* height: 800px; */
+  /* max-height: 1900px; */
+
   background: ${(props) => props.theme['base-background']};
 `

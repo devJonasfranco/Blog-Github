@@ -16,6 +16,9 @@ export const StyleDivProfile = styled.div`
 
   display: flex;
   gap: 2rem;
+  img {
+    border-radius: 8px;
+  }
 `
 
 export const StyleInforProfile = styled.div`
@@ -48,6 +51,10 @@ export const StyleInforProfile = styled.div`
     font-size: 1rem;
     line-height: 1.5rem;
     color: ${(props) => props.theme['base-text']};
+    margin-top: 0.5rem;
+    /* border: 1px solid; */
+    width: 38.25rem;
+    height: 3.25rem;
   }
   span {
     display: flex;
@@ -57,6 +64,7 @@ export const StyleInforProfile = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-top: 1.5rem;
       gap: 0.6rem;
       color: ${(props) => props.theme['base-subtitle']};
       text-decoration: none;
