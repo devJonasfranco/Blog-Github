@@ -28,6 +28,7 @@ interface NomeUser {
   html_url: string
   company: string | null
   public_repos: number
+  // owner: Owner
 }
 // type 04 --> é para dizer ao contexto o que vai ser enviado ou compartilhado
 interface createContextType {
@@ -50,7 +51,7 @@ export function DadosDaApiProvider({ children }: DadosDaApiProviderType) {
   const [dadosUser, setDadosUser] = useState<NomeUser | null>(null)
   const [buscaRepositorio, setBuscaRepositorio] = useState<string | null>(null)
 
-  const nomeUsuario = 'devjonasfranco'
+  const nomeUsuario = 'RakelMacedo'
   // devjonasfranco
   async function getDadosApi() {
     // get dados do repositorio

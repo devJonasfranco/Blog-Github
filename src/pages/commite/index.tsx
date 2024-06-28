@@ -52,7 +52,7 @@ export function Commites() {
               </NavLink>
             </span>
             <p>
-              <a href={repositorio.owner.html_url} target="_brack">
+              <a href={repositorio.html_url} target="_brack">
                 VER NO GITHUB <ArrowSquareOut size={17} />
               </a>
             </p>

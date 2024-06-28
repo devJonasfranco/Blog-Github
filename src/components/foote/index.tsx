@@ -20,13 +20,13 @@ export function Footer() {
           <p>
             <LinkedinLogo size={20} />:{' '}
             <StyleAncora href={dadosUser?.blog} target="_brack">
-              dev-jonasfranco
+              {dadosUser?.login}
             </StyleAncora>
           </p>
           <p>
             <GithubLogo size={20} />:{' '}
             <StyleAncora href={dadosUser?.html_url} target="_brack">
-              devJonasfranco
+              {dadosUser?.login}
             </StyleAncora>
           </p>
         </div>

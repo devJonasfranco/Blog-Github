@@ -6,13 +6,9 @@ import { Search } from '../../components/search'
 export function MainContainer() {
   return (
     <>
-      {/* <StyleMain>
-        <ContainerMain> */}
       <Profile />
       <Search />
       <CardsProjetos />
-      {/* </ContainerMain>
-      </StyleMain> */}
     </>
   )
 }
