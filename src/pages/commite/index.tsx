@@ -6,7 +6,7 @@ import {
   GithubLogo,
 } from '@phosphor-icons/react'
 import code from '../../assets/code.png'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useParams } from 'react-router-dom'
 import {
   StyleConteiner,
   StyleDivNomePost,
@@ -16,7 +16,30 @@ import {
   StyledFooter,
   StyledTexto,
 } from './style'
+import { useEffect, useState } from 'react'
+import { api2 } from '../../lib/Axios'
+import { formatDistanceToNow } from 'date-fns'
+import { ptBR } from 'date-fns/locale'
+
+// import { id } from 'date-fns/locale'
 export function Commites() {
+  const { owner, name } = useParams()
+  const [repositorio, setRepositorio] = useState(null)
+
+  useEffect(() => {
+    async function fachtRepositorio() {
+      try {
+        const response = await api2.get(`repos/${owner}/${name}`)
+        setRepositorio(response.data)
+      } catch (error) {
+        console.error('Erro ao buscar dados do repositorio', error)
+      }
+    }
+
+    fachtRepositorio()
+  }, [owner, name])
+  if (!repositorio) return <p>Carregando...</p>
+  console.log(repositorio)
   return (
     <StyleLayout>
       <StyleConteiner>
@@ -29,36 +52,36 @@ export function Commites() {
               </NavLink>
             </span>
             <p>
-              <a href="https://github.com/devJonasfranco" target="_brack">
+              <a href={repositorio.owner.html_url} target="_brack">
                 VER NO GITHUB <ArrowSquareOut size={17} />
               </a>
             </p>
           </StyleDivVoltar>
           <StyleDivNomePost>
-            <h4>JavaScript data type and data structures</h4>
+            <h4>{repositorio.name}</h4>
             <span>
               <div>
-                <GithubLogo size={24} /> <p>Cameronwll</p>
+                <GithubLogo size={24} /> <p>{repositorio.owner.login}</p>
               </div>
               <div>
-                <CalendarBlank size={32} /> <p>Há 1 dia</p>
+                <CalendarBlank size={32} />{' '}
+                <p>
+                  {formatDistanceToNow(repositorio.created_at, {
+                    addSuffix: true,
+                    locale: ptBR,
+                  })}
+                </p>
               </div>
               <div>
-                <ChatCircle size={32} /> <p>5 comentários</p>
+                <ChatCircle size={32} /> <p>{repositorio.open_issues_count}</p>
               </div>
             </span>
           </StyleDivNomePost>
         </StyleHeader>
         <StyledTexto>
-          Programming languages all have built-in data structures, but these
-          often differ from one language to another. This article attempts to
-          list the built-in data structures available in JavaScript and what
-          properties they have. These can be used to build other data
-          structures. Wherever possible, comparisons with other languages are
-          drawn. Dynamic typing JavaScript is a loosely typed and dynamic
-          language. Variables in JavaScript are not directly associated with any
-          particular value type, and any variable can be assigned (and
-          re-assigned) values of all types:
+          {repositorio.description
+            ? repositorio.description
+            : 'sem comentários sombre o projeto'}
         </StyledTexto>
         <StyledFooter>
           <img src={code} alt="" />

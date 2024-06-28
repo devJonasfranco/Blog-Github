@@ -9,7 +9,7 @@ export function Rounter() {
     <Routes>
       <Route path="/" element={<DefaultLayout />}>
         <Route path="/" element={<MainContainer />} />
-        <Route path="/commite" element={<Commites />} />
+        <Route path="/commite/:owner/:name" element={<Commites />} />
       </Route>
     </Routes>
   )

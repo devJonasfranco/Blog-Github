@@ -1,7 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { Paginacao } from '../paginação'
 import { StyleConteinerUl, StyleLayout, StyleSection } from './style'
-
 import { formatDistanceToNow } from 'date-fns'
 import { ptBR } from 'date-fns/locale/pt-BR'
 import { useContext } from 'react'
@@ -9,19 +8,23 @@ import { ContextDadosDaApi } from '../../contexts/ContextDadosDaApi'
 
 export function CardsProjetos() {
   const constext = useContext(ContextDadosDaApi)
+
   if (!constext) {
     return <div>Loading...</div>
   }
-  const { repositorio } = constext
+  const { currentItems } = constext
 
+  const sortedItems = currentItems.sort((a, b) => {
+    return new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+  })
   return (
     <>
       <StyleLayout>
         <StyleConteinerUl>
-          {repositorio.map((repos) => {
+          {sortedItems.map((repos) => {
             return (
               <li key={repos.id}>
-                <NavLink to="/commite">
+                <NavLink to={`/commite/${repos.owner.login}/${repos.name}`}>
                   <StyleSection>
                     <div>
                       <strong>{repos.name}</strong>

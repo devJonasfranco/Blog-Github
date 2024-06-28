@@ -33,7 +33,12 @@ export const StyleContainer = styled.div`
       color: ${(props) => props.theme['base-span']};
     }
   }
+  form {
+    width: 100%;
+    /* border: 1px solid; */
+  }
   input {
+    width: 100%;
     height: 50px;
     background: ${(props) => props.theme['base-input']};
     border: none;

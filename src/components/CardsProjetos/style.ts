@@ -4,6 +4,7 @@ export const StyleLayout = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 3rem;
+  min-height: 700px;
   /* border: 1px solid; */
 `
 export const StyleConteinerUl = styled.ul`

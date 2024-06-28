@@ -10,9 +10,15 @@ export const StyleLayout = styled.div`
     gap: 30px;
 
     button {
+      display: flex;
+      align-items: center;
+      color: ${(props) => props.theme['base-span']};
       border: none;
       background: transparent;
       cursor: pointer;
+      &:hover {
+        color: ${(props) => props.theme['base-blue']};
+      }
     }
     svg {
       color: ${(props) => props.theme['base-span']};
